@@ -11,7 +11,7 @@ namespace ProjetGSB
     {
         public static void ajoutMateriel(Materiel unMateriel)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -29,16 +29,18 @@ namespace ProjetGSB
         }
         public static void ajoutTicket(Ticket unTicket)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode=None";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            string requeteTicket = "INSERT INTO ticket VALUES(@objet, @niveauUrgence, @dateHeure, @idMat, @matriculePersonnel)";
+            string requeteTicket = "INSERT INTO ticket VALUES (@numeroTicket, @objet, @niveauUrgence, @date, @idMat, @matriculePersonnel)";
             MySqlCommand command2 = conn.CreateCommand();
+            command2.CommandTimeout = 200;
             command2.CommandText = requeteTicket;
+            command2.Parameters.AddWithValue("@numeroTicket", unTicket.NumeroTicket);
             command2.Parameters.AddWithValue("@objet", unTicket.Objet);
             command2.Parameters.AddWithValue("@niveauUrgence", unTicket.NiveauUrgence);
-            command2.Parameters.AddWithValue("@dateHeure", unTicket.DateHeure);
+            command2.Parameters.AddWithValue("@date", unTicket.Date);
             command2.Parameters.AddWithValue("@idMat", unTicket.IdMat);
             command2.Parameters.AddWithValue("@matriculePersonnel", unTicket.MatriculePersonnel);
             command2.ExecuteNonQuery();
@@ -46,7 +48,7 @@ namespace ProjetGSB
         }
         public static void ajoutTechnicien(Technicien unTechnicien)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -68,7 +70,7 @@ namespace ProjetGSB
         }
         public static void ajoutUtilisateur(MembrePersonnel unMembrePersonnel)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -90,7 +92,7 @@ namespace ProjetGSB
         }
         public static void modifTechnicien(Technicien unTechnicien)
         {
-                    string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+                    string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
                     MySqlConnection conn = new MySqlConnection(connString);
                     conn.Open();
 
@@ -110,7 +112,7 @@ namespace ProjetGSB
         }
         public static void modifResponsable(Responsable unResponsable)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -128,7 +130,7 @@ namespace ProjetGSB
         }
         public static void modifUtilisateur(MembrePersonnel unUtilisateur)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -146,7 +148,7 @@ namespace ProjetGSB
         }
         public static void supprTechnicien(int rang)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -159,7 +161,7 @@ namespace ProjetGSB
         }
         public static void supprUtilisateur(int rang)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -170,9 +172,22 @@ namespace ProjetGSB
             command6.ExecuteNonQuery();
             conn.Close();
         }
+        public static void supprMateriel(int rang)
+        {
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            string requeteSuppTech = "DELETE FROM materiel WHERE id=" + rang;
+
+            MySqlCommand command9 = conn.CreateCommand();
+            command9.CommandText = requeteSuppTech;
+            command9.ExecuteNonQuery();
+            conn.Close();
+        }
         public static void afficher(Technicien unTechnicien)
         {
-            string connString = "Serveur=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -182,6 +197,36 @@ namespace ProjetGSB
             command7.CommandText = requeteAfficheTech;
             command7.ExecuteNonQuery();
             conn.Close ();
+        }
+
+        public static void afficherTechniciens()
+        {
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            string requeteAfficheTech = "SELECT * FROM technicien ";
+
+            MySqlCommand command8 = conn.CreateCommand();
+            command8.CommandText = requeteAfficheTech;
+            command8.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static MySqlCommand afficherTicket()
+        {
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open ();
+
+            string requeteAffichTicket = "SELECT numeroTicket FROM Ticket";
+
+            MySqlCommand command9 = conn.CreateCommand();
+            command9.CommandText = requeteAffichTicket;
+            command9.ExecuteNonQuery();
+            conn.Close();
+
+            return command9;
         }
     }
 }

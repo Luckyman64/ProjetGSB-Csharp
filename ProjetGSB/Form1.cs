@@ -18,16 +18,17 @@ namespace ProjetGSB
         }
         List<Technicien> lesTechniciens;
         List<Responsable> lesResponsables;
+        List<Materiel> lesMaterieles;
         private void Form1_Load(object sender, EventArgs e)
         {
             lesResponsables = new List<Responsable>();
             lesTechniciens = new List<Technicien>();
-            /*Connexion connexion = new Connexion();
-            connexion.Show();
-            this.Close();*/
+            lesMaterieles = new List<Materiel>();
+            listBoxsuppTech.DataSource = lesTechniciens;
+            ListeBoxMateriels.DataSource = lesMaterieles;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreationTicket_Click(object sender, EventArgs e)
         {
             CreationTicket creationTicket = new CreationTicket();
             creationTicket.Show();
@@ -36,8 +37,7 @@ namespace ProjetGSB
         private void buttonSuiviTickets_Click(object sender, EventArgs e)
         {
             SuiviTicket suiviTicket = new SuiviTicket();
-            suiviTicket.ShowDialog();
-            this.Close();
+            suiviTicket.Show();
         }
 
         private void buttonAjoutMat_Click(object sender, EventArgs e)
@@ -48,7 +48,10 @@ namespace ProjetGSB
 
         private void buttonSuppMat_Click(object sender, EventArgs e)
         {
-           
+            int rangM;
+            rangM = ListeBoxMateriels.SelectedIndex;
+            BdGSB.supprMateriel(rangM);
+            lesMaterieles.Remove(lesMaterieles[rangM]);
         }
 
         private void buttonModifTechUtil_Click(object sender, EventArgs e)
@@ -57,20 +60,21 @@ namespace ProjetGSB
             ajoutModifTechnicienUtilisateur.Show();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void ButtonSupprTech_Click(object sender, EventArgs e)
         {
             int rangT;
             rangT = listBoxsuppTech.SelectedIndex;
             foreach(Technicien unTecnicien in lesTechniciens)
             {
-                ///if(rangT.Equals(unTecnicien.Id))
+                if(rangT.Equals(unTecnicien.Matricule))
                 {
                     BdGSB.supprTechnicien(rangT);
+                    lesTechniciens.Remove(lesTechniciens[rangT]);
                 }
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonConsultIncident_Click(object sender, EventArgs e)
         {
             Detail detail = new Detail();
             detail.Show();

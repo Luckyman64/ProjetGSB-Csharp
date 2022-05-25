@@ -39,7 +39,7 @@ namespace ProjetGSB
             else
                 if (radioButton4.Checked)
                 niveauU = "cloture";
-            Ticket unTicket = new Ticket(textBoxDescription.Text, niveauU, dateTimePicker1.Text, textBoxM.Text, textBoxU.Text);
+            Ticket unTicket = new Ticket(Convert.ToInt16(TBNumeroTicket.Text), textBoxDescription.Text, niveauU, dateTimePicker1.Text, textBoxM.Text, textBoxU.Text);
             BdGSB.ajoutTicket(unTicket);
             lesTickets.Add(unTicket);
         }

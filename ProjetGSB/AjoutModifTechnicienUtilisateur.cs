@@ -28,5 +28,15 @@ namespace ProjetGSB
             MembrePersonnel unMembrePerso = new MembrePersonnel(textBoxModUtiMatricule.Text, textBoxModUtiPoste.Text, textBoxModUtiNom.Text, textBoxModUtiPrenom.Text, textBoxModUtiAdresse.Text, textBoxModUtiCp.Text, textBoxModUtiVille.Text, textBoxModUtiDateEmbauche.Text, textBoxModUtiIdMat.Text, textBoxModUtiMatResponsable.Text);
             BdGSB.ajoutUtilisateur(unMembrePerso);
         }
+
+        private void buttonModifTechnicien_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AjoutModifTechnicienUtilisateur_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

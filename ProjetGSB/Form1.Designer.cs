@@ -36,7 +36,7 @@ namespace ProjetGSB
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonSuppMat = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonConsultIncident = new System.Windows.Forms.Button();
             this.ListeBoxMateriels = new System.Windows.Forms.ListBox();
             this.buttonAjoutMat = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -61,7 +61,7 @@ namespace ProjetGSB
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBoxsuppTech = new System.Windows.Forms.ListBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.ButtonSupprTech = new System.Windows.Forms.Button();
             this.buttonModifTechUtil = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,7 +115,7 @@ namespace ProjetGSB
             this.buttonCreationTicket.TabIndex = 0;
             this.buttonCreationTicket.Text = "Création ticket";
             this.buttonCreationTicket.UseVisualStyleBackColor = true;
-            this.buttonCreationTicket.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCreationTicket.Click += new System.EventHandler(this.buttonCreationTicket_Click);
             // 
             // tabPage2
             // 
@@ -142,7 +142,7 @@ namespace ProjetGSB
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.buttonConsultIncident);
             this.groupBox3.Controls.Add(this.ListeBoxMateriels);
             this.groupBox3.Location = new System.Drawing.Point(59, 16);
             this.groupBox3.Name = "groupBox3";
@@ -151,15 +151,15 @@ namespace ProjetGSB
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Consultation";
             // 
-            // button7
+            // buttonConsultIncident
             // 
-            this.button7.Location = new System.Drawing.Point(480, 267);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(129, 47);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Consultation d\'un incident";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonConsultIncident.Location = new System.Drawing.Point(480, 267);
+            this.buttonConsultIncident.Name = "buttonConsultIncident";
+            this.buttonConsultIncident.Size = new System.Drawing.Size(129, 47);
+            this.buttonConsultIncident.TabIndex = 4;
+            this.buttonConsultIncident.Text = "Consultation d\'un incident";
+            this.buttonConsultIncident.UseVisualStyleBackColor = true;
+            this.buttonConsultIncident.Click += new System.EventHandler(this.buttonConsultIncident_Click);
             // 
             // ListeBoxMateriels
             // 
@@ -375,7 +375,7 @@ namespace ProjetGSB
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listBoxsuppTech);
-            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.ButtonSupprTech);
             this.groupBox4.Location = new System.Drawing.Point(27, 36);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(442, 252);
@@ -392,15 +392,15 @@ namespace ProjetGSB
             this.listBoxsuppTech.Size = new System.Drawing.Size(382, 68);
             this.listBoxsuppTech.TabIndex = 4;
             // 
-            // button9
+            // ButtonSupprTech
             // 
-            this.button9.Location = new System.Drawing.Point(91, 147);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(234, 50);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Supprimer";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.ButtonSupprTech.Location = new System.Drawing.Point(91, 147);
+            this.ButtonSupprTech.Name = "ButtonSupprTech";
+            this.ButtonSupprTech.Size = new System.Drawing.Size(234, 50);
+            this.ButtonSupprTech.TabIndex = 3;
+            this.ButtonSupprTech.Text = "Supprimer";
+            this.ButtonSupprTech.UseVisualStyleBackColor = true;
+            this.ButtonSupprTech.Click += new System.EventHandler(this.ButtonSupprTech_Click);
             // 
             // buttonModifTechUtil
             // 
@@ -445,7 +445,7 @@ namespace ProjetGSB
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button buttonSuiviTickets;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonConsultIncident;
         private System.Windows.Forms.Button buttonSuppMat;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox ListeBoxMateriels;
@@ -471,7 +471,7 @@ namespace ProjetGSB
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox listBoxsuppTech;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button ButtonSupprTech;
         private System.Windows.Forms.Button buttonModifTechUtil;
     }
 }

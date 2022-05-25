@@ -19,6 +19,11 @@ namespace ProjetGSB
 
         private void SuiviTicket_Load(object sender, EventArgs e)
         {
+            listBoxSuiviTicket.Text = Convert.ToString(BdGSB.afficherTicket());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

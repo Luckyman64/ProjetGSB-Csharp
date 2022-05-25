@@ -136,12 +136,6 @@
     <Compile Include="AjoutModifTechnicienUtilisateur.Designer.cs">
       <DependentUpon>AjoutModifTechnicienUtilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Materiel.cs" />
     <Compile Include="MembrePersonnel.cs" />
     <Compile Include="Program.cs" />
@@ -167,9 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjoutModifTechnicienUtilisateur.resx">
       <DependentUpon>AjoutModifTechnicienUtilisateur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

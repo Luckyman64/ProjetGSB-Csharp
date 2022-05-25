@@ -87,6 +87,16 @@ namespace ProjetGSB
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxModUtiMatResponsable = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBoxModUtiIdMat = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxModUtiVille = new System.Windows.Forms.TextBox();
+            this.textBoxModUtiCp = new System.Windows.Forms.TextBox();
+            this.textBoxModUtiAdresse = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.textBoxModUtiPoste = new System.Windows.Forms.TextBox();
             this.textBoxModUtiDateEmbauche = new System.Windows.Forms.TextBox();
             this.textBoxModUtiPrenom = new System.Windows.Forms.TextBox();
@@ -98,16 +108,6 @@ namespace ProjetGSB
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBoxModUtiVille = new System.Windows.Forms.TextBox();
-            this.textBoxModUtiCp = new System.Windows.Forms.TextBox();
-            this.textBoxModUtiAdresse = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBoxModUtiIdMat = new System.Windows.Forms.TextBox();
-            this.textBoxModUtiMatResponsable = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -247,13 +247,14 @@ namespace ProjetGSB
             this.buttonModifTechnicien.TabIndex = 17;
             this.buttonModifTechnicien.Text = "Modifier";
             this.buttonModifTechnicien.UseVisualStyleBackColor = true;
+            this.buttonModifTechnicien.Click += new System.EventHandler(this.buttonModifTechnicien_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(222, 355);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 17);
+            this.label19.Size = new System.Drawing.Size(73, 16);
             this.label19.TabIndex = 16;
             this.label19.Text = "Formation :";
             // 
@@ -262,7 +263,7 @@ namespace ProjetGSB
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(222, 293);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(149, 17);
+            this.label20.Size = new System.Drawing.Size(138, 16);
             this.label20.TabIndex = 15;
             this.label20.Text = "Niveau d\'intervention :";
             // 
@@ -271,7 +272,7 @@ namespace ProjetGSB
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(222, 220);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(127, 17);
+            this.label21.Size = new System.Drawing.Size(120, 16);
             this.label21.TabIndex = 14;
             this.label21.Text = "Date d\'embauche :";
             // 
@@ -280,7 +281,7 @@ namespace ProjetGSB
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(222, 162);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(42, 17);
+            this.label22.Size = new System.Drawing.Size(39, 16);
             this.label22.TabIndex = 13;
             this.label22.Text = "Ville :";
             // 
@@ -289,7 +290,7 @@ namespace ProjetGSB
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(21, 341);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(92, 17);
+            this.label23.Size = new System.Drawing.Size(87, 16);
             this.label23.TabIndex = 12;
             this.label23.Text = "Code Postal :";
             // 
@@ -298,7 +299,7 @@ namespace ProjetGSB
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(21, 279);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 17);
+            this.label24.Size = new System.Drawing.Size(64, 16);
             this.label24.TabIndex = 11;
             this.label24.Text = "Adresse :";
             // 
@@ -307,7 +308,7 @@ namespace ProjetGSB
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(21, 218);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 17);
+            this.label25.Size = new System.Drawing.Size(60, 16);
             this.label25.TabIndex = 10;
             this.label25.Text = "Prenom :";
             // 
@@ -316,7 +317,7 @@ namespace ProjetGSB
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(21, 162);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 17);
+            this.label26.Size = new System.Drawing.Size(42, 16);
             this.label26.TabIndex = 9;
             this.label26.Text = "Nom :";
             // 
@@ -452,7 +453,7 @@ namespace ProjetGSB
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(42, 338);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 17);
+            this.label9.Size = new System.Drawing.Size(73, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Formation :";
             // 
@@ -461,7 +462,7 @@ namespace ProjetGSB
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(42, 296);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 17);
+            this.label8.Size = new System.Drawing.Size(138, 16);
             this.label8.TabIndex = 7;
             this.label8.Text = "Niveau d\'intervention :";
             // 
@@ -470,7 +471,7 @@ namespace ProjetGSB
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(42, 257);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 17);
+            this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Date d\'embauche :";
             // 
@@ -479,7 +480,7 @@ namespace ProjetGSB
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(42, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Ville :";
             // 
@@ -488,7 +489,7 @@ namespace ProjetGSB
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(42, 185);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
+            this.label5.Size = new System.Drawing.Size(87, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Code Postal :";
             // 
@@ -497,7 +498,7 @@ namespace ProjetGSB
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(42, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Adresse :";
             // 
@@ -506,7 +507,7 @@ namespace ProjetGSB
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(42, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Prenom :";
             // 
@@ -515,7 +516,7 @@ namespace ProjetGSB
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(42, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nom :";
             // 
@@ -524,7 +525,7 @@ namespace ProjetGSB
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "N° matricule :";
             // 
@@ -592,7 +593,7 @@ namespace ProjetGSB
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(217, 223);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.Size = new System.Drawing.Size(48, 16);
             this.label11.TabIndex = 22;
             this.label11.Text = "Poste :";
             // 
@@ -619,7 +620,7 @@ namespace ProjetGSB
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(217, 187);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(127, 17);
+            this.label13.Size = new System.Drawing.Size(120, 16);
             this.label13.TabIndex = 21;
             this.label13.Text = "Date d\'embauche :";
             // 
@@ -628,7 +629,7 @@ namespace ProjetGSB
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(21, 184);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 17);
+            this.label15.Size = new System.Drawing.Size(42, 16);
             this.label15.TabIndex = 19;
             this.label15.Text = "Nom :";
             // 
@@ -637,7 +638,7 @@ namespace ProjetGSB
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(21, 220);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 17);
+            this.label14.Size = new System.Drawing.Size(60, 16);
             this.label14.TabIndex = 20;
             this.label14.Text = "Prenom :";
             // 
@@ -670,6 +671,85 @@ namespace ProjetGSB
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout";
+            // 
+            // textBoxModUtiMatResponsable
+            // 
+            this.textBoxModUtiMatResponsable.Location = new System.Drawing.Point(311, 358);
+            this.textBoxModUtiMatResponsable.Name = "textBoxModUtiMatResponsable";
+            this.textBoxModUtiMatResponsable.Size = new System.Drawing.Size(100, 22);
+            this.textBoxModUtiMatResponsable.TabIndex = 25;
+            // 
+            // label33
+            // 
+            this.label33.Location = new System.Drawing.Point(42, 356);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(127, 43);
+            this.label33.TabIndex = 24;
+            this.label33.Text = "N° matricule Responsable :";
+            // 
+            // textBoxModUtiIdMat
+            // 
+            this.textBoxModUtiIdMat.Location = new System.Drawing.Point(311, 318);
+            this.textBoxModUtiIdMat.Name = "textBoxModUtiIdMat";
+            this.textBoxModUtiIdMat.Size = new System.Drawing.Size(100, 22);
+            this.textBoxModUtiIdMat.TabIndex = 23;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(42, 321);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(78, 16);
+            this.label32.TabIndex = 22;
+            this.label32.Text = "N° Matériel :";
+            // 
+            // textBoxModUtiVille
+            // 
+            this.textBoxModUtiVille.Location = new System.Drawing.Point(312, 286);
+            this.textBoxModUtiVille.Name = "textBoxModUtiVille";
+            this.textBoxModUtiVille.Size = new System.Drawing.Size(100, 22);
+            this.textBoxModUtiVille.TabIndex = 21;
+            // 
+            // textBoxModUtiCp
+            // 
+            this.textBoxModUtiCp.Location = new System.Drawing.Point(311, 251);
+            this.textBoxModUtiCp.Name = "textBoxModUtiCp";
+            this.textBoxModUtiCp.Size = new System.Drawing.Size(100, 22);
+            this.textBoxModUtiCp.TabIndex = 20;
+            // 
+            // textBoxModUtiAdresse
+            // 
+            this.textBoxModUtiAdresse.Location = new System.Drawing.Point(312, 217);
+            this.textBoxModUtiAdresse.Name = "textBoxModUtiAdresse";
+            this.textBoxModUtiAdresse.Size = new System.Drawing.Size(100, 22);
+            this.textBoxModUtiAdresse.TabIndex = 19;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(42, 289);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 16);
+            this.label27.TabIndex = 18;
+            this.label27.Text = "Ville :";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(42, 254);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(87, 16);
+            this.label30.TabIndex = 17;
+            this.label30.Text = "Code Postal :";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(42, 220);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(64, 16);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Adresse :";
             // 
             // textBoxModUtiPoste
             // 
@@ -711,7 +791,7 @@ namespace ProjetGSB
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(42, 187);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 17);
+            this.label10.Size = new System.Drawing.Size(48, 16);
             this.label10.TabIndex = 10;
             this.label10.Text = "Poste :";
             // 
@@ -730,7 +810,7 @@ namespace ProjetGSB
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(42, 151);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(127, 17);
+            this.label12.Size = new System.Drawing.Size(120, 16);
             this.label12.TabIndex = 6;
             this.label12.Text = "Date d\'embauche :";
             // 
@@ -739,7 +819,7 @@ namespace ProjetGSB
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(42, 117);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 17);
+            this.label16.Size = new System.Drawing.Size(60, 16);
             this.label16.TabIndex = 2;
             this.label16.Text = "Prenom :";
             // 
@@ -748,7 +828,7 @@ namespace ProjetGSB
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(42, 81);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(45, 17);
+            this.label17.Size = new System.Drawing.Size(42, 16);
             this.label17.TabIndex = 1;
             this.label17.Text = "Nom :";
             // 
@@ -757,88 +837,9 @@ namespace ProjetGSB
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(42, 47);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 17);
+            this.label18.Size = new System.Drawing.Size(84, 16);
             this.label18.TabIndex = 0;
             this.label18.Text = "N° matricule :";
-            // 
-            // textBoxModUtiVille
-            // 
-            this.textBoxModUtiVille.Location = new System.Drawing.Point(312, 286);
-            this.textBoxModUtiVille.Name = "textBoxModUtiVille";
-            this.textBoxModUtiVille.Size = new System.Drawing.Size(100, 22);
-            this.textBoxModUtiVille.TabIndex = 21;
-            // 
-            // textBoxModUtiCp
-            // 
-            this.textBoxModUtiCp.Location = new System.Drawing.Point(311, 251);
-            this.textBoxModUtiCp.Name = "textBoxModUtiCp";
-            this.textBoxModUtiCp.Size = new System.Drawing.Size(100, 22);
-            this.textBoxModUtiCp.TabIndex = 20;
-            // 
-            // textBoxModUtiAdresse
-            // 
-            this.textBoxModUtiAdresse.Location = new System.Drawing.Point(312, 217);
-            this.textBoxModUtiAdresse.Name = "textBoxModUtiAdresse";
-            this.textBoxModUtiAdresse.Size = new System.Drawing.Size(100, 22);
-            this.textBoxModUtiAdresse.TabIndex = 19;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(42, 289);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 17);
-            this.label27.TabIndex = 18;
-            this.label27.Text = "Ville :";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(42, 254);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(92, 17);
-            this.label30.TabIndex = 17;
-            this.label30.Text = "Code Postal :";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(42, 220);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(68, 17);
-            this.label31.TabIndex = 16;
-            this.label31.Text = "Adresse :";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(42, 321);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 17);
-            this.label32.TabIndex = 22;
-            this.label32.Text = "N° Matériel :";
-            // 
-            // textBoxModUtiIdMat
-            // 
-            this.textBoxModUtiIdMat.Location = new System.Drawing.Point(311, 318);
-            this.textBoxModUtiIdMat.Name = "textBoxModUtiIdMat";
-            this.textBoxModUtiIdMat.Size = new System.Drawing.Size(100, 22);
-            this.textBoxModUtiIdMat.TabIndex = 23;
-            // 
-            // textBoxModUtiMatResponsable
-            // 
-            this.textBoxModUtiMatResponsable.Location = new System.Drawing.Point(311, 358);
-            this.textBoxModUtiMatResponsable.Name = "textBoxModUtiMatResponsable";
-            this.textBoxModUtiMatResponsable.Size = new System.Drawing.Size(100, 22);
-            this.textBoxModUtiMatResponsable.TabIndex = 25;
-            // 
-            // label33
-            // 
-            this.label33.Location = new System.Drawing.Point(42, 356);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(127, 43);
-            this.label33.TabIndex = 24;
-            this.label33.Text = "N° matricule Responsable :";
             // 
             // AjoutModifTechnicienUtilisateur
             // 
@@ -848,6 +849,7 @@ namespace ProjetGSB
             this.Controls.Add(this.tabControl1);
             this.Name = "AjoutModifTechnicienUtilisateur";
             this.Text = "Ajout/Modification";
+            this.Load += new System.EventHandler(this.AjoutModifTechnicienUtilisateur_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
