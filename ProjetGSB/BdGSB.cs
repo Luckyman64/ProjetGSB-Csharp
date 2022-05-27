@@ -72,7 +72,7 @@ namespace ProjetGSB
         }
         public static void ajoutUtilisateur(MembrePersonnel unMembrePersonnel)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -94,8 +94,8 @@ namespace ProjetGSB
         }
         public static void modifTechnicien(Technicien unTechnicien)
         {
-                    string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
-                    MySqlConnection conn = new MySqlConnection(connString);
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            MySqlConnection conn = new MySqlConnection(connString);
                     conn.Open();
 
                     string requeteModifTech = "UPDATE technicien SET nom = @nom, prenom = @prenom, adresse = @adresse, cp = @cp, ville = @ville, dateEmbaucheTechnicien = @dateEmbaucheTechnicien, niveauIntervention = @niveauIntervention, formation = @formation, matriculeResponsable = @matriculeResponsable WHERE nom=" + unTechnicien.Nom;
@@ -114,7 +114,7 @@ namespace ProjetGSB
         }
         public static void modifResponsable(Responsable unResponsable)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -132,7 +132,7 @@ namespace ProjetGSB
         }
         public static void modifUtilisateur(MembrePersonnel unUtilisateur)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -150,7 +150,7 @@ namespace ProjetGSB
         }
         public static void supprTechnicien(int rang)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -163,7 +163,7 @@ namespace ProjetGSB
         }
         public static void supprUtilisateur(int rang)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -176,7 +176,7 @@ namespace ProjetGSB
         }
         public static void supprMateriel(int rang)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -189,7 +189,7 @@ namespace ProjetGSB
         }
         public static void afficher(Technicien unTechnicien)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -203,7 +203,7 @@ namespace ProjetGSB
 
         public static void afficherTechniciens()
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 

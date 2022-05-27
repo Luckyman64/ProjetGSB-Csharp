@@ -44,7 +44,7 @@ namespace ProjetGSB
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(191, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "N° du ticket :";
             // 
@@ -53,7 +53,7 @@ namespace ProjetGSB
             this.labelNumTicket.AutoSize = true;
             this.labelNumTicket.Location = new System.Drawing.Point(400, 60);
             this.labelNumTicket.Name = "labelNumTicket";
-            this.labelNumTicket.Size = new System.Drawing.Size(0, 17);
+            this.labelNumTicket.Size = new System.Drawing.Size(0, 16);
             this.labelNumTicket.TabIndex = 1;
             // 
             // labelObjTicket
@@ -61,7 +61,7 @@ namespace ProjetGSB
             this.labelObjTicket.AutoSize = true;
             this.labelObjTicket.Location = new System.Drawing.Point(400, 111);
             this.labelObjTicket.Name = "labelObjTicket";
-            this.labelObjTicket.Size = new System.Drawing.Size(0, 17);
+            this.labelObjTicket.Size = new System.Drawing.Size(0, 16);
             this.labelObjTicket.TabIndex = 3;
             // 
             // label3
@@ -69,7 +69,7 @@ namespace ProjetGSB
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(191, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 17);
+            this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Objet du ticket :";
             // 
@@ -78,7 +78,7 @@ namespace ProjetGSB
             this.labelNivUrgence.AutoSize = true;
             this.labelNivUrgence.Location = new System.Drawing.Point(400, 165);
             this.labelNivUrgence.Name = "labelNivUrgence";
-            this.labelNivUrgence.Size = new System.Drawing.Size(0, 17);
+            this.labelNivUrgence.Size = new System.Drawing.Size(0, 16);
             this.labelNivUrgence.TabIndex = 5;
             // 
             // label4
@@ -86,7 +86,7 @@ namespace ProjetGSB
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(191, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 17);
+            this.label4.Size = new System.Drawing.Size(119, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Niveau d\'urgence :";
             // 
@@ -95,7 +95,7 @@ namespace ProjetGSB
             this.labelDateHeure.AutoSize = true;
             this.labelDateHeure.Location = new System.Drawing.Point(400, 219);
             this.labelDateHeure.Name = "labelDateHeure";
-            this.labelDateHeure.Size = new System.Drawing.Size(0, 17);
+            this.labelDateHeure.Size = new System.Drawing.Size(0, 16);
             this.labelDateHeure.TabIndex = 7;
             // 
             // label5
@@ -103,11 +103,11 @@ namespace ProjetGSB
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(191, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 17);
+            this.label5.Size = new System.Drawing.Size(145, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Date et heure du ticket :";
             // 
-            // Form4
+            // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,8 +120,9 @@ namespace ProjetGSB
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelNumTicket);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
+            this.Name = "Detail";
             this.Text = "Détails incident";
+            this.Load += new System.EventHandler(this.Detail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

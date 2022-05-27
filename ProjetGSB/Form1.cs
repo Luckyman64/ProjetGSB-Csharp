@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ProjetGSB
 {
     public partial class Form1 : Form
     {
+        MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
+        MySqlDataReader dr;
+        MySqlCommand cmd;
         public Form1()
         {
             InitializeComponent();
@@ -24,8 +28,33 @@ namespace ProjetGSB
             lesResponsables = new List<Responsable>();
             lesTechniciens = new List<Technicien>();
             lesMaterieles = new List<Materiel>();
-            listBoxsuppTech.DataSource = lesTechniciens;
-            ListeBoxMateriels.DataSource = lesMaterieles;
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT matriculeTechnicien FROM technicien";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                listBoxsuppTech.Items.Add(dr["matriculeTechnicien"]);
+            }
+            con.Close();
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT numeroTicket FROM ticket";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListeBoxMateriels.Items.Add(dr["numeroTicket"]);
+            }
+            con.Close();
+        }
+        public int ListeBoxMateriel
+        {
+            get { return Convert.ToInt32(ListeBoxMateriels); }
+            set { Convert.ToInt32(ListeBoxMateriels) = value; }
         }
 
         private void buttonCreationTicket_Click(object sender, EventArgs e)
