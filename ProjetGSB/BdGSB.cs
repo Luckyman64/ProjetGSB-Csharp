@@ -11,13 +11,12 @@ namespace ProjetGSB
     {
         public static void ajoutMateriel(Materiel unMateriel)
         {
-            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
             string requeteMat = "INSERT INTO materiel VALUES(@process, @memoire, @disque, @dateAchat, @garantie, @fournisseur)";
             MySqlCommand command1 = conn.CreateCommand();
-            command1.CommandTimeout = 200;
             command1.CommandText = requeteMat;
             command1.Parameters.AddWithValue("@process", unMateriel.Processeur);
             command1.Parameters.AddWithValue("@memoire", unMateriel.Memoire);
@@ -49,13 +48,12 @@ namespace ProjetGSB
         }
         public static void ajoutTechnicien(Technicien unTechnicien)
         {
-            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
             string requeteTechnicien = "INSERT INTO technicien VALUES(@matriculeTechnicien, @nom, @prenom, @adresse, @cp, @ville, @dateEmbaucheTechnicien, @niveauIntervention, @formation, @matriculeResponsable)";
             MySqlCommand command3 = conn.CreateCommand();
-            command3.CommandTimeout = 200;
             command3.CommandText = requeteTechnicien;
             command3.Parameters.AddWithValue("@matriculeTechnicien", unTechnicien.Matricule);
             command3.Parameters.AddWithValue("@nom", unTechnicien.Nom);
@@ -65,7 +63,7 @@ namespace ProjetGSB
             command3.Parameters.AddWithValue("@ville", unTechnicien.Ville);
             command3.Parameters.AddWithValue("@dateEmbaucheTechnicien", unTechnicien.DateEmbauche);
             command3.Parameters.AddWithValue("@niveauIntervention", unTechnicien.NiveauIntervention);
-            command3.Parameters.AddWithValue("@formation", unTechnicien.Formation);
+            command3.Parameters.AddWithValue("@fromation", unTechnicien.Formation);
             command3.Parameters.AddWithValue("@matriculeResponsable", unTechnicien.MatriculeResponsable);
             command3.ExecuteNonQuery();
             conn.Close();
@@ -215,9 +213,9 @@ namespace ProjetGSB
             conn.Close();
         }
 
-        public static void afficherTicket()
+        public static MySqlCommand afficherTicket()
         {
-            /*string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open ();
 
@@ -226,9 +224,9 @@ namespace ProjetGSB
             MySqlCommand command9 = conn.CreateCommand();
             command9.CommandText = requeteAffichTicket;
             command9.ExecuteNonQuery();
-            conn.Close();*/
-            
+            conn.Close();
 
+            return command9;
         }
     }
 }

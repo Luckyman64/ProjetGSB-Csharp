@@ -7,15 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ProjetGSB
 {
     public partial class AjoutModifTechnicienUtilisateur : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
-        MySqlDataReader dr;
-        MySqlCommand cmd;
         public AjoutModifTechnicienUtilisateur()
         {
             InitializeComponent();
@@ -35,35 +31,12 @@ namespace ProjetGSB
 
         private void buttonModifTechnicien_Click(object sender, EventArgs e)
         {
-            cmd = new MySqlCommand();
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT matriculeTechnicien FROM technicien";
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                listBoxTech.Items.Add(dr["matriculeTechnicien"]);
-            }
-            con.Close();
+            
         }
 
         private void AjoutModifTechnicienUtilisateur_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttonModifUtilisateur_Click(object sender, EventArgs e)
-        {
-            cmd = new MySqlCommand();
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT matriculeTechnicien FROM membrePersonnel";
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                listBoxTech.Items.Add(dr["matriculeTechnicien"]);
-            }
-            con.Close();
         }
     }
 }
