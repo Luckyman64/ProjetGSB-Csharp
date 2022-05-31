@@ -19,7 +19,7 @@ namespace ProjetGSB
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            Materiel unMateriel = new Materiel(TBProcesseur.Text, TBMemoire.Text, TBDisque.Text, TBDateAchat.Text, TBGarantie.Text, TBFournisseur.Text);
+            Materiel unMateriel = new Materiel(TBId.Text, TBProcesseur.Text, TBMemoire.Text, TBDisque.Text, TBDateAchat.Text, TBGarantie.Text, TBFournisseur.Text);
             BdGSB.ajoutMateriel(unMateriel);
         }
 

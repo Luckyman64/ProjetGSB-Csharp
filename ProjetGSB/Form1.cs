@@ -50,11 +50,8 @@ namespace ProjetGSB
                 ListeBoxMateriels.Items.Add(dr["numeroTicket"]);
             }
             con.Close();
-        }
-        public int ListeBoxMateriel
-        {
-            get { return Convert.ToInt32(ListeBoxMateriels); }
-            set { Convert.ToInt32(ListeBoxMateriels) = value; }
+
+
         }
 
         private void buttonCreationTicket_Click(object sender, EventArgs e)
@@ -75,14 +72,6 @@ namespace ProjetGSB
             ajoutMat.Show();
         }
 
-        private void buttonSuppMat_Click(object sender, EventArgs e)
-        {
-            int rangM;
-            rangM = ListeBoxMateriels.SelectedIndex;
-            BdGSB.supprMateriel(rangM);
-            lesMaterieles.Remove(lesMaterieles[rangM]);
-        }
-
         private void buttonModifTechUtil_Click(object sender, EventArgs e)
         {
             AjoutModifTechnicienUtilisateur ajoutModifTechnicienUtilisateur = new AjoutModifTechnicienUtilisateur();
@@ -93,19 +82,26 @@ namespace ProjetGSB
         {
             int rangT;
             rangT = listBoxsuppTech.SelectedIndex;
-            foreach(Technicien unTecnicien in lesTechniciens)
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM technicien";
+            dr = cmd.ExecuteReader();
+            rangT = rangT + 1;
+            while (dr.Read())
             {
-                if(rangT.Equals(unTecnicien.Matricule))
+                if (rangT == Convert.ToInt32(dr["id"]))
                 {
                     BdGSB.supprTechnicien(rangT);
-                    lesTechniciens.Remove(lesTechniciens[rangT]);
                 }
             }
         }
 
         private void buttonConsultIncident_Click(object sender, EventArgs e)
         {
-            Detail detail = new Detail();
+            int id;
+            id = Convert.ToInt32(ListeBoxMateriels.SelectedIndex.ToString());
+            Detail detail = new Detail(id);
             detail.Show();
         }
     }

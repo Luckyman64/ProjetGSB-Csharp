@@ -605,6 +605,7 @@ namespace ProjetGSB
             this.buttonModifUtilisateur.TabIndex = 17;
             this.buttonModifUtilisateur.Text = "Modifier";
             this.buttonModifUtilisateur.UseVisualStyleBackColor = true;
+            this.buttonModifUtilisateur.Click += new System.EventHandler(this.buttonModifUtilisateur_Click);
             // 
             // listBox2
             // 

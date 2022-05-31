@@ -11,13 +11,14 @@ namespace ProjetGSB
     {
         public static void ajoutMateriel(Materiel unMateriel)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            string requeteMat = "INSERT INTO materiel VALUES(@process, @memoire, @disque, @dateAchat, @garantie, @fournisseur)";
+            string requeteMat = "INSERT INTO materiel VALUES(@idMat, @process, @memoire, @disque, @dateAchat, @garantie, @fournisseur)";
             MySqlCommand command1 = conn.CreateCommand();
             command1.CommandText = requeteMat;
+            command1.Parameters.AddWithValue("@idMat", unMateriel.Id);
             command1.Parameters.AddWithValue("@process", unMateriel.Processeur);
             command1.Parameters.AddWithValue("@memoire", unMateriel.Memoire);
             command1.Parameters.AddWithValue("@disque", unMateriel.Disque);
@@ -48,7 +49,7 @@ namespace ProjetGSB
         }
         public static void ajoutTechnicien(Technicien unTechnicien)
         {
-            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=;";
+            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
@@ -63,7 +64,7 @@ namespace ProjetGSB
             command3.Parameters.AddWithValue("@ville", unTechnicien.Ville);
             command3.Parameters.AddWithValue("@dateEmbaucheTechnicien", unTechnicien.DateEmbauche);
             command3.Parameters.AddWithValue("@niveauIntervention", unTechnicien.NiveauIntervention);
-            command3.Parameters.AddWithValue("@fromation", unTechnicien.Formation);
+            command3.Parameters.AddWithValue("@formation", unTechnicien.Formation);
             command3.Parameters.AddWithValue("@matriculeResponsable", unTechnicien.MatriculeResponsable);
             command3.ExecuteNonQuery();
             conn.Close();
@@ -74,7 +75,7 @@ namespace ProjetGSB
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            string requeteUtilisateur = "INSERT INTO menbrepersonnel VALUES(@matriculePersonnel, @poste, @nom, @prenom, @dateEmbauchePersonnel, @adresse, @cp, @ville, @idMat, @matriculeResponsable";
+            string requeteUtilisateur = "INSERT INTO membrepersonnel VALUES(@matriculePersonnel, @poste, @nom, @prenom, @dateEmbauchePersonnel, @adresse, @cp, @ville, @idMat, @matriculeResponsable)";
             MySqlCommand command4 = conn.CreateCommand();
             command4.CommandText = requeteUtilisateur;
             command4.Parameters.AddWithValue("@matriculePersonnel", unMembrePersonnel.Matricule);
@@ -134,9 +135,10 @@ namespace ProjetGSB
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            string requeteModifTech = "UPDATE membrepersonnel SET nom = @nom, prenom = @prenom, adresse = @adresse, cp = @cp, ville = @ville, dateEmbaucheTechnicien = @dateEmbaucheTechnicien, matriculeResponsable = @matriculeResponsable WHERE nom=" + unUtilisateur.Nom;
+            string requeteModifTech = "UPDATE membrepersonnel SET nom = @nom, prenom = @prenom, adresse = @adresse, cp = @cp, ville = @ville, dateEmbaucheTechnicien = @dateEmbaucheTechnicien, matriculeResponsable = @matriculeResponsable WHERE nom='@id'";
             MySqlCommand command9 = conn.CreateCommand();
             command9.CommandText = requeteModifTech;
+            command9.Parameters.AddWithValue("@id", unUtilisateur.Nom);
             command9.Parameters.AddWithValue("@nom", unUtilisateur.Nom);
             command9.Parameters.AddWithValue("@prenom", unUtilisateur.Prenom);
             command9.Parameters.AddWithValue("@adresse", unUtilisateur.Adresse);
@@ -165,24 +167,12 @@ namespace ProjetGSB
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            string requeteSuppTech = "DELETE FROM membrepersonnel WHERE id=" + rang;
+            string requeteSuppTech = "DELETE FROM membrepersonnel WHERE id='@rang'";
 
             MySqlCommand command6 = conn.CreateCommand();
             command6.CommandText = requeteSuppTech;
+            command6.Parameters.AddWithValue("@rang", rang);
             command6.ExecuteNonQuery();
-            conn.Close();
-        }
-        public static void supprMateriel(int rang)
-        {
-            string connString = "Server = 127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            string requeteSuppTech = "DELETE FROM materiel WHERE id=" + rang;
-
-            MySqlCommand command9 = conn.CreateCommand();
-            command9.CommandText = requeteSuppTech;
-            command9.ExecuteNonQuery();
             conn.Close();
         }
         public static void afficher(Technicien unTechnicien)

@@ -16,16 +16,16 @@ namespace ProjetGSB
         MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
         MySqlDataReader dr;
         MySqlCommand cmd;
-        public Detail()
+        private int id;
+        public Detail(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void Detail_Load(object sender, EventArgs e)
         {
-            Form1 
-            int id;
-            id = Convert.ToInt32(listeBoxMateriels.SelectedIndex.ToString());
+            id = id + 1;
             cmd = new MySqlCommand();
             con.Open();
             cmd.Connection = con;
