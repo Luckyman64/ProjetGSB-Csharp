@@ -23,7 +23,7 @@ namespace ProjetGSB
 
         private void SuiviTicket_Load(object sender, EventArgs e)
         {
-            listBoxSuiviTicket.Text = Convert.ToString(BdGSB.afficherTicket());
+            /*listBoxSuiviTicket.Text = Convert.ToString(BdGSB.afficherTicket());*/
 
             cmd = new MySqlCommand();
             con.Open();

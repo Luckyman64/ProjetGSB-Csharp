@@ -104,5 +104,11 @@ namespace ProjetGSB
             Detail detail = new Detail(id);
             detail.Show();
         }
+
+        private void buttonVentes_Click(object sender, EventArgs e)
+        {
+            Achats_Materiels achats_Materiels = new Achats_Materiels();
+            achats_Materiels.Show();
+        }
     }
 }

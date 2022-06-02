@@ -43,6 +43,7 @@ namespace ProjetGSB
             this.listBoxsuppTech = new System.Windows.Forms.ListBox();
             this.ButtonSupprTech = new System.Windows.Forms.Button();
             this.buttonModifTechUtil = new System.Windows.Forms.Button();
+            this.buttonVentes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,6 +97,7 @@ namespace ProjetGSB
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonVentes);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.buttonAjoutMat);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -138,7 +140,7 @@ namespace ProjetGSB
             // 
             // buttonAjoutMat
             // 
-            this.buttonAjoutMat.Location = new System.Drawing.Point(539, 415);
+            this.buttonAjoutMat.Location = new System.Drawing.Point(247, 410);
             this.buttonAjoutMat.Name = "buttonAjoutMat";
             this.buttonAjoutMat.Size = new System.Drawing.Size(129, 46);
             this.buttonAjoutMat.TabIndex = 1;
@@ -198,6 +200,16 @@ namespace ProjetGSB
             this.buttonModifTechUtil.UseVisualStyleBackColor = true;
             this.buttonModifTechUtil.Click += new System.EventHandler(this.buttonModifTechUtil_Click);
             // 
+            // buttonVentes
+            // 
+            this.buttonVentes.Location = new System.Drawing.Point(784, 410);
+            this.buttonVentes.Name = "buttonVentes";
+            this.buttonVentes.Size = new System.Drawing.Size(127, 46);
+            this.buttonVentes.TabIndex = 3;
+            this.buttonVentes.Text = "Achats";
+            this.buttonVentes.UseVisualStyleBackColor = true;
+            this.buttonVentes.Click += new System.EventHandler(this.buttonVentes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -233,6 +245,7 @@ namespace ProjetGSB
         private System.Windows.Forms.ListBox listBoxsuppTech;
         private System.Windows.Forms.Button ButtonSupprTech;
         private System.Windows.Forms.Button buttonModifTechUtil;
+        private System.Windows.Forms.Button buttonVentes;
     }
 }
 

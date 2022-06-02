@@ -218,5 +218,87 @@ namespace ProjetGSB
 
             return command9;
         }
+
+        public static void ajouterAchat(AchatMateriel unAchatMateriel)
+        {
+            string connString = "Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            string requete = "INSERT INTO achatmateriel VALUES(@id, @typeMat, @caracteristique, @lieuVente, @prixVente, @date)";
+
+            MySqlCommand command4 = conn.CreateCommand();
+            command4.CommandText = requete;
+            command4.Parameters.AddWithValue("@id", unAchatMateriel.Id);
+            command4.Parameters.AddWithValue("@typeMat", unAchatMateriel.TypeMat);
+            command4.Parameters.AddWithValue("@caracteristique", unAchatMateriel.Caractéristique);
+            command4.Parameters.AddWithValue("@lieuVente", unAchatMateriel.LieuVente);
+            command4.Parameters.AddWithValue("@prixVente", unAchatMateriel.PrixVente);
+            command4.Parameters.AddWithValue("@date", unAchatMateriel.Date);
+            command4.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static MySqlDataReader afficherTypeMat()
+        {
+            MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
+            MySqlDataReader dr;
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT typeMat FROM achatmateriel";
+            dr = cmd.ExecuteReader();
+
+            return dr;
+        }
+
+        public static MySqlDataReader afficherLieu()
+        {
+            MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
+            MySqlDataReader dr;
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT lieuVente FROM achatmateriel";
+            dr = cmd.ExecuteReader();
+
+            return dr;
+        }
+
+        public static MySqlDataReader afficherTypeAll(String typeSelectionner)
+        {
+            MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
+            MySqlDataReader dr;
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT id FROM achatmateriel WHERE typeMat = @selection";
+            cmd.Parameters.AddWithValue("@selection", typeSelectionner);
+            dr = cmd.ExecuteReader();
+
+            return dr;
+        }
+
+        public static MySqlDataReader afficherLieuAll(String lieuSelectionner)
+        {
+            MySqlConnection con = new MySqlConnection("Server=127.0.0.1; Database = gsb; Uid = root; Password=; SSL Mode = None");
+            MySqlDataReader dr;
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT id FROM achatmateriel WHERE lieuVente = @selection";
+            cmd.Parameters.AddWithValue("@selection", lieuSelectionner);
+            dr = cmd.ExecuteReader();
+
+            return dr;
+        }
     }
 }
